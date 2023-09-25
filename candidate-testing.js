@@ -12,11 +12,11 @@ let candidateAnswer = "";
 
 //TODO: Variables for Part 2
 let questions = [
-("Who was the first American woman in space? "),
-("True or false: 5 kilometer == 5000 meters? "),
-("(5 + 3)/2 * 10 = ? "),
-("[8, 'Orbit', 'Trajectory', 45], what entry is at index 2? "),
-("What is the minimum crew size for the ISS? ")
+"Who was the first American woman in space? ",
+"True or false: 5 kilometer == 5000 meters? ",
+"(5 + 3)/2 * 10 = ? ",
+"[8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ",
+"What is the minimum crew size for the ISS? "
 ];
 
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
@@ -32,7 +32,7 @@ function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   //input.question(question + candidateAnswer); 
   
-for (let i = 0; i < questions.length; i++) {
+for (let i = 0; i < questions; i++) {
   if(questions == input.question(questions[i])){
      console.log(i);
     }
