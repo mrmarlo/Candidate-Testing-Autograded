@@ -36,34 +36,51 @@ for (let i = 0; i < questions.length; i++) {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  //correctAnswers.push("Sally Ride", true, 40, "Trajectory", "3");
+  //correctAnswers.push("Sally Ride", true, 40, "Trajectory", 3);
  for (i = 0; i < candidateAnswers; i++) {
     console.log(i);
  }
-  for (i = 0; i < candidateAnswers; i++) {
+  for (i = 0; i < correctAnswers; i++) {
     console.log(i);
  }
 
  if(correctAnswers == candidateAnswers){
-      console.log(`${candidateAnswers} is correct!`)
+      console.log(`${candidateAnswers} is correct!`);
       } else {
-      console.log(`${candidateAnswers} is incorrect!`)
+      //console.log(`${candidateAnswers} is incorrect!`);
      }
 
 let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-(grade = correctAnswers / 5) * 100;
-
+let numOfCorrectAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
+grade = (numOfCorrectAnswers.length / 5)* 100;
+for (let i = 0; i < numOfCorrectAnswers.length; i++) {
+if ((numOfCorrectAnswers === 0) && (correctAnswers != candidateAnswers)) {
+  console.log(`You have a grade of: ${grade}% You FAILED`);
+} else if (numOfCorrectAnswers == 5) {
+  console.log(`You have a grade of: ${grade}% You PASSED!`);
+} else if (numOfCorrectAnswers == 1) {
+  console.log(`You have a grade of: ${grade}% You FAILDED`); 
+} else if (numOfCorrectAnswers == 2) {
+  console.log(`You have a grade of: ${grade}% Yoe FAILDED!`);
+} else if (numOfCorrectAnswers == 3) {
+  console.log(`You have a grade of: ${grade}% You FAILED!`);
+} else if (numOfCorrectAnswers == 4) {
+  console.log(`You have a grade of: ${grade}% You PASSED!`);
+}
+//grade = (numOfCorrectAnswers / 5) * 100;
+} 
   return grade;
 }
+
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
-   console.log("Hello", + candidateName);
+   console.log("Hello " + candidateName);
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
 
-//runProgram()
+runProgram()
 // ----------- Don't write any code or change any code below this line ---------- //
 module.exports = {
   candidateName: candidateName,
